@@ -43,6 +43,7 @@ dns:
     geoip-code: CN
 proxies:
 - {name: los1, server: desi.chakbass.top, port: 47955, type: trojan, password: n3Cs2DYEJl, sni: desi.chakbass.top, skip-cert-verify: true, udp: true}
+- {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 1011c262-96d8-4bcc-b52a-971aedf2b36b, sni: or-s.chakbass.top, skip-cert-verify: true, udp: true}
 - {name: "\U0001F1F0\U0001F1F7"🇷, server: or-kr1.chakbass.top, port: 4353, type: trojan, password: UpDmutLGq0, sni: or-kr1.chakbass.top, skip-cert-verify: true, udp: true}
 - {name: "\U0001F1F8\U0001F1EC", server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, sni: green.chak.uk, skip-cert-verify: true, udp: true}
 - {name: "\U0001F1E9\U0001F1EA", server: netcup.chakbass.top, port: 443, type: trojan, password: 29917356d0, sni: netcup.chakbass.top, skip-cert-verify: true, udp: true}
