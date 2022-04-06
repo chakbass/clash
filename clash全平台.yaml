@@ -42,46 +42,13 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: los1
-  password: hwwZ9oCZows3
-  server: los1.chakbass.top
-  type: ss
-  port: 9700
-  uuid: 3bebc492-3ead-480a-a2f9-50bed64972df
-  udp: false
-  flow: xtls-rprx-direct
-  cipher: aes-256-gcm
-- name: "\U0001F1F8\U0001F1EC"
-  password: 26fe58397b
-  server: green.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: "\U0001F1E9\U0001F1EA"
-  password: p2DJIxTNBpVD
-  server: netcup.chakbass.top
-  type: ss
-  port: 18323
-  udp: false
-  cipher: chacha20-ietf-poly1305
-- name: 圣何塞
-  password: 1011c262-96d8-4bcc-b52a-971aedf2b36b
-  server: or-s.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: "\U0001F1F0\U0001F1F7"
-  password: 7bc757b2c0
-  server: or-kr2.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: buy
-  password: HoUOthLIJXdF
-  server: buy.chakbass.top
-  type: ss
-  port: 16584
-  cipher: aes-256-gcm
+- {name: los1, server: desi.chakbass.top, port: 47955, type: trojan, password: n3Cs2DYEJl, sni: desi.chakbass.top, skip-cert-verify: true, udp: true}
+- {name: "\U0001F1F0\U0001F1F7"🇷, server: or-kr1.chakbass.top, port: 4353, type: trojan, password: UpDmutLGq0, sni: or-kr1.chakbass.top, skip-cert-verify: true, udp: true}
+- {name: "\U0001F1F8\U0001F1EC", server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, sni: green.chak.uk, skip-cert-verify: true, udp: true}
+- {name: "\U0001F1E9\U0001F1EA", server: netcup.chakbass.top, port: 443, type: trojan, password: 29917356d0, sni: netcup.chakbass.top, skip-cert-verify: true, udp: true}
+- {name: kr-amd, server: or-amd.chakbass.top, port: 443, type: vmess, uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /gddg54, headers: {Host: or-amd.chakbass.top}}, udp: true}
+- {name: buy, server: buy.chakbass.top, port: 443, type: vmess, uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /sdc23a, headers: {Host: buy.chakbass.top}}, udp: true}
+- {name: ser, server: ser.chakbass.top, port: 443, type: vmess, uuid: e6fbf27b-5028-42a9-f072-e34e67c1a6e8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dsd23, headers: {Host: ser.chakbass.top}}, udp: true}
 proxy-groups:
 - name: 手动选择
   type: select
