@@ -1,0 +1,294 @@
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  default-nameserver:
+  - 114.114.114.114
+  - 223.5.5.5
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '+.lan'
+  - '+.cn'
+  - '+.10010.com'
+  - '+.chinaunicom.com'
+  - '+.baidu.com'
+  - '*.alipay.com'
+  - '*.alipayobjects.com'
+  - '*.jijifun.com'
+  - 'connect.rom.miui.com'
+  - 'localhost.ptlogin2.qq.com'
+  - '+.msftnsci.com'
+  - '+.msftconnecttest.com'
+  - 'dl.google.com'
+  nameserver:
+  - https://rubyfish.cn/dns-query
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  fallback:
+  - https://doh.opendns.com/dns-query
+  - https://dns.adguard.com/dns-query
+  - https://doh.dns.sb/dns-query
+  - https://dns64.cloudflare-dns.com/dns-query
+  - https://dns64.dns.google/dns-query
+  - https://dns.google/dns-query
+  - https://cloudflare-dns.com/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+proxies:
+- name: los1
+  password: hwwZ9oCZows3
+  server: los1.chakbass.top
+  type: ss
+  port: 9700
+  uuid: 3bebc492-3ead-480a-a2f9-50bed64972df
+  udp: false
+  flow: xtls-rprx-direct
+  cipher: aes-256-gcm
+- name: "\U0001F1F8\U0001F1EC"
+  password: 26fe58397b
+  server: green.chakbass.top
+  type: trojan
+  port: 443
+  udp: true
+- name: "\U0001F1E9\U0001F1EA"
+  password: p2DJIxTNBpVD
+  server: netcup.chakbass.top
+  type: ss
+  port: 18323
+  udp: false
+  cipher: chacha20-ietf-poly1305
+- name: 圣何塞
+  password: 1011c262-96d8-4bcc-b52a-971aedf2b36b
+  server: or-s.chakbass.top
+  type: trojan
+  port: 443
+  udp: true
+- name: "\U0001F1F0\U0001F1F7"
+  password: 7bc757b2c0
+  server: or-kr2.chakbass.top
+  type: trojan
+  port: 443
+  udp: true
+- name: buy
+  password: HoUOthLIJXdF
+  server: buy.chakbass.top
+  type: ss
+  port: 16584
+  cipher: aes-256-gcm
+proxy-groups:
+- name: 手动选择
+  type: select
+  proxies:
+  - Auto
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+- name: Auto
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  proxies:
+  - buy
+  - "\U0001F1F0\U0001F1F7"
+  - 圣何塞
+  - "\U0001F1E9\U0001F1EA"
+  - "\U0001F1F8\U0001F1EC"
+  - los1
+- name: YouTube
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+  proxies:
+  - buy
+  - "\U0001F1E9\U0001F1EA"
+  - 圣何塞
+- name: Netflix
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+  proxies:
+  - "\U0001F1F8\U0001F1EC"
+  - "\U0001F1F0\U0001F1F7"
+  - DIRECT
+- name: Disney
+  type: select
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/DisneyPlus.png
+  proxies:
+  - "\U0001F1F0\U0001F1F7"
+  - "\U0001F1F8\U0001F1EC"
+- name: AD-block
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
+  proxies:
+  - REJECT
+- name: Apple
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+  proxies:
+  - buy
+  - DIRECT
+- name: Microsoft
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  proxies:
+  - buy
+  - DIRECT
+- name: BiliBili
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
+  proxies:
+  - DIRECT
+- name: China-direct
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+  proxies:
+  - DIRECT
+- name: Telegram
+  type: select
+  proxies:
+  - Auto
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+- name: iCloud
+  type: select
+  proxies:
+  - DIRECT
+  icon: ☁️
+- name: Spotify
+  type: select
+  proxies:
+  - Auto
+  - DIRECT
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+- name: HBO
+  type: load-balance
+  proxies:
+  - buy
+  - 圣何塞
+  - los1
+  url: http://cp.cloudflare.com/generate_204
+  interval: 300
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HBO.png
+- name: Apple News
+  type: url-test
+  proxies:
+  - buy
+  - 圣何塞
+  url: http://cp.cloudflare.com/generate_204
+  interval: 300
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png
+rule-providers:
+  YouTube:
+    type: http
+    behavior: classical
+    path: ./ruleset/YouTube.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./ruleset/Netflix.yaml
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./ruleset/Microsoft.yaml
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+    interval: 86400
+  BiliBili:
+    type: http
+    behavior: classical
+    path: ./ruleset/BiliBili.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili.yaml"
+    interval: 86400
+  HBO:
+    type: http
+    behavior: classical
+    path: ./ruleset/HBO.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml"
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    path: ./ruleset/Spotify.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    interval: 86400
+  AD-block:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  Apple:
+    type: http
+    behavior: domain
+    path: ./ruleset/apple.yaml
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    interval: 86400
+  iCloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  Auto:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  Disney:
+    type: http
+    behavior: classical
+    path: ./ruleset/DisneyPlus.yaml
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml"
+    interval: 86400
+  China-direct:
+    type: http
+    behavior: domain
+    path: ./ruleset/direct.yaml
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    interval: 86400
+  Apple News:
+    type: http
+    behavior: classical
+    path: ./ruleset/AppleNews.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml"
+    interval: 86400
+rules:
+- RULE-SET,Apple News,Apple News
+- RULE-SET,China-direct,China-direct
+- RULE-SET,AD-block,AD-block
+- RULE-SET,Telegram,Telegram
+- RULE-SET,iCloud,iCloud
+- RULE-SET,Apple,Apple
+- RULE-SET,Auto,Auto
+- RULE-SET,China-direct,China-direct
+- RULE-SET,YouTube,YouTube
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Disney,Disney
+- RULE-SET,HBO,HBO
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,BiliBili,BiliBili
+- RULE-SET,Spotify,Spotify
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR,fe80::/10,DIRECT
+- IP-CIDR,119.28.28.28/32,DIRECT
+- IP-CIDR,182.254.116.0/24,DIRECT
+- GEOIP,DIRECT
+- MATCH,Auto
