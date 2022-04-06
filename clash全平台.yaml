@@ -42,109 +42,109 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- {name: los1, server: desi.chakbass.top, port: 47955, type: trojan, password: n3Cs2DYEJl, sni: desi.chakbass.top, skip-cert-verify: true, udp: true}
-- {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 1011c262-96d8-4bcc-b52a-971aedf2b36b, sni: or-s.chakbass.top, skip-cert-verify: true, udp: true}
-- {name: "\U0001F1F0\U0001F1F7"🇷, server: or-kr1.chakbass.top, port: 4353, type: trojan, password: UpDmutLGq0, sni: or-kr1.chakbass.top, skip-cert-verify: true, udp: true}
-- {name: "\U0001F1F8\U0001F1EC", server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, sni: green.chak.uk, skip-cert-verify: true, udp: true}
-- {name: "\U0001F1E9\U0001F1EA", server: netcup.chakbass.top, port: 443, type: trojan, password: 29917356d0, sni: netcup.chakbass.top, skip-cert-verify: true, udp: true}
-- {name: kr-amd, server: or-amd.chakbass.top, port: 443, type: vmess, uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /gddg54, headers: {Host: or-amd.chakbass.top}}, udp: true}
-- {name: buy, server: buy.chakbass.top, port: 443, type: vmess, uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /sdc23a, headers: {Host: buy.chakbass.top}}, udp: true}
-- {name: ser, server: ser.chakbass.top, port: 443, type: vmess, uuid: e6fbf27b-5028-42a9-f072-e34e67c1a6e8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dsd23, headers: {Host: ser.chakbass.top}}, udp: true}
+  - {name: los1, server: desi.chakbass.top, port: 47955, type: trojan, password: n3Cs2DYEJl, sni: desi.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 1011c262-96d8-4bcc-b52a-971aedf2b36b, sni: or-s.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1F0\U0001F1F7"🇷, server: or-kr1.chakbass.top, port: 4353, type: trojan, password: UpDmutLGq0, sni: or-kr1.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1F8\U0001F1EC", server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, sni: green.chak.uk, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1E9\U0001F1EA", server: netcup.chakbass.top, port: 443, type: trojan, password: 29917356d0, sni: netcup.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: kr-amd, server: or-amd.chakbass.top, port: 443, type: vmess, uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /gddg54, headers: {Host: or-amd.chakbass.top}}, udp: true}
+  - {name: buy, server: buy.chakbass.top, port: 443, type: vmess, uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /sdc23a, headers: {Host: buy.chakbass.top}}, udp: true}
+  - {name: ser, server: ser.chakbass.top, port: 443, type: vmess, uuid: e6fbf27b-5028-42a9-f072-e34e67c1a6e8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dsd23, headers: {Host: ser.chakbass.top}}, udp: true}
 proxy-groups:
-- name: 手动选择
-  type: select
-  proxies:
-  - Auto
+  - name: 手动选择
+    type: select
+    proxies:
+      - Auto
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
-- name: Auto
-  type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
-  url: "http://www.gstatic.com/generate_204"
-  interval: 300
-  proxies:
-  - buy
-  - "\U0001F1F0\U0001F1F7"
-  - 圣何塞
-  - "\U0001F1E9\U0001F1EA"
-  - "\U0001F1F8\U0001F1EC"
-  - los1
-- name: YouTube
+  - name: Auto
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    proxies:
+     - buy
+     - "\U0001F1F0\U0001F1F7"
+     - 圣何塞
+     - "\U0001F1E9\U0001F1EA"
+     - "\U0001F1F8\U0001F1EC"
+     - los1
+  - name: YouTube
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   proxies:
-  - buy
-  - "\U0001F1E9\U0001F1EA"
-  - 圣何塞
-- name: Netflix
+    - buy
+    - "\U0001F1E9\U0001F1EA"
+    - 圣何塞
+  - name: Netflix
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
   proxies:
-  - "\U0001F1F8\U0001F1EC"
-  - "\U0001F1F0\U0001F1F7"
-  - DIRECT
-- name: Disney
+    - "\U0001F1F8\U0001F1EC"
+    - "\U0001F1F0\U0001F1F7"
+    - DIRECT
+  - name: Disney
   type: select
   icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/DisneyPlus.png
   proxies:
-  - "\U0001F1F0\U0001F1F7"
-  - "\U0001F1F8\U0001F1EC"
-- name: AD-block
+    - "\U0001F1F0\U0001F1F7"
+    - "\U0001F1F8\U0001F1EC"
+  - name: AD-block
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
   proxies:
-  - REJECT
-- name: Apple
+    - REJECT
+  - name: Apple
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
   proxies:
-  - buy
-  - DIRECT
-- name: Microsoft
+    - buy
+    - DIRECT
+  - name: Microsoft
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   proxies:
-  - buy
-  - DIRECT
-- name: BiliBili
+    - buy
+    - DIRECT
+  - name: BiliBili
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
   proxies:
-  - DIRECT
-- name: China-direct
+    - DIRECT
+  - name: China-direct
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
   proxies:
-  - DIRECT
-- name: Telegram
+    - DIRECT
+  - name: Telegram
   type: select
   proxies:
-  - Auto
+    - Auto
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-- name: iCloud
+  - name: iCloud
   type: select
   proxies:
-  - DIRECT
+    - DIRECT
   icon: ☁️
-- name: Spotify
+  - name: Spotify
   type: select
   proxies:
-  - Auto
-  - DIRECT
+    - Auto
+    - DIRECT
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-- name: HBO
+  - name: HBO
   type: load-balance
   proxies:
-  - buy
-  - 圣何塞
-  - los1
+    - buy
+    - 圣何塞
+    - los1
   url: http://cp.cloudflare.com/generate_204
   interval: 300
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HBO.png
-- name: Apple News
+  - name: Apple News
   type: url-test
   proxies:
-  - buy
-  - 圣何塞
+    - buy
+    - 圣何塞
   url: http://cp.cloudflare.com/generate_204
   interval: 300
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png
@@ -234,29 +234,29 @@ rule-providers:
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml"
     interval: 86400
 rules:
-- RULE-SET,Apple News,Apple News
-- RULE-SET,China-direct,China-direct
-- RULE-SET,AD-block,AD-block
-- RULE-SET,Telegram,Telegram
-- RULE-SET,iCloud,iCloud
-- RULE-SET,Apple,Apple
-- RULE-SET,Auto,Auto
-- RULE-SET,China-direct,China-direct
-- RULE-SET,YouTube,YouTube
-- RULE-SET,Netflix,Netflix
-- RULE-SET,Disney,Disney
-- RULE-SET,HBO,HBO
-- RULE-SET,Microsoft,Microsoft
-- RULE-SET,BiliBili,BiliBili
-- RULE-SET,Spotify,Spotify
-- IP-CIDR,192.168.0.0/16,DIRECT
-- IP-CIDR,10.0.0.0/8,DIRECT
-- IP-CIDR,172.16.0.0/12,DIRECT
-- IP-CIDR,127.0.0.0/8,DIRECT
-- IP-CIDR,100.64.0.0/10,DIRECT
-- IP-CIDR,224.0.0.0/4,DIRECT
-- IP-CIDR,fe80::/10,DIRECT
-- IP-CIDR,119.28.28.28/32,DIRECT
-- IP-CIDR,182.254.116.0/24,DIRECT
-- GEOIP,DIRECT
-- MATCH,Auto
+ - RULE-SET,Apple News,Apple News
+ - RULE-SET,China-direct,China-direct
+ - RULE-SET,AD-block,AD-block
+ - RULE-SET,Telegram,Telegram
+ - RULE-SET,iCloud,iCloud
+ - RULE-SET,Apple,Apple
+ - RULE-SET,Auto,Auto
+ - RULE-SET,China-direct,China-direct
+ - RULE-SET,YouTube,YouTube
+ - RULE-SET,Netflix,Netflix
+ - RULE-SET,Disney,Disney
+ - RULE-SET,HBO,HBO
+ - RULE-SET,Microsoft,Microsoft
+ - RULE-SET,BiliBili,BiliBili
+ - RULE-SET,Spotify,Spotify
+ - IP-CIDR,192.168.0.0/16,DIRECT
+ - IP-CIDR,10.0.0.0/8,DIRECT
+ - IP-CIDR,172.16.0.0/12,DIRECT
+ - IP-CIDR,127.0.0.0/8,DIRECT
+ - IP-CIDR,100.64.0.0/10,DIRECT
+ - IP-CIDR,224.0.0.0/4,DIRECT
+ - IP-CIDR,fe80::/10,DIRECT
+ - IP-CIDR,119.28.28.28/32,DIRECT
+ - IP-CIDR,182.254.116.0/24,DIRECT
+ - GEOIP,DIRECT
+ - MATCH,Auto
