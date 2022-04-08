@@ -100,7 +100,7 @@ proxies:
   port: 443
   udp: true
 - name: "\U0001F1E9\U0001F1EA"
-  password: 29917356d0
+  password: vGb2DdcI0A
   server: netcup.chakbass.top
   type: trojan
   port: 443
@@ -148,6 +148,7 @@ proxy-groups:
   proxies:
   - "\U0001F1F8\U0001F1EC"
   - "\U0001F1F0\U0001F1F7"
+  - 圣何塞
   - DIRECT
 - name: Disney
   type: select
@@ -155,6 +156,8 @@ proxy-groups:
   proxies:
   - "\U0001F1F0\U0001F1F7"
   - "\U0001F1F8\U0001F1EC"
+  - "\U0001F1E9\U0001F1EA"
+  - 圣何塞
 - name: AD-block
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
@@ -175,11 +178,6 @@ proxy-groups:
 - name: BiliBili
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
-  proxies:
-  - DIRECT
-- name: China-direct
-  type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
   proxies:
   - DIRECT
 - name: Telegram
@@ -288,12 +286,6 @@ rule-providers:
     path: ./ruleset/DisneyPlus.yaml
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml"
     interval: 86400
-  China-direct:
-    type: http
-    behavior: domain
-    path: ./ruleset/direct.yaml
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
-    interval: 86400
   Apple News:
     type: http
     behavior: classical
@@ -302,13 +294,11 @@ rule-providers:
     interval: 86400
 rules:
 - RULE-SET,Apple News,Apple News
-- RULE-SET,China-direct,China-direct
 - RULE-SET,AD-block,AD-block
 - RULE-SET,Telegram,Telegram
 - RULE-SET,iCloud,iCloud
 - RULE-SET,Apple,Apple
 - RULE-SET,Auto,Auto
-- RULE-SET,China-direct,China-direct
 - RULE-SET,YouTube,YouTube
 - RULE-SET,Netflix,Netflix
 - RULE-SET,Disney,Disney
