@@ -65,7 +65,6 @@ proxy-groups:
   interval: 300
   proxies:
   - buy
-  - azu-hk
   - aws-jp
   - "\U0001F1F0\U0001F1F7"
   - 圣何塞
