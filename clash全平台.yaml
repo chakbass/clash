@@ -42,6 +42,18 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: azu-hk
+  password: e105fd12f1
+  server: hk.chakbass.top
+  type: trojan
+  port: 443
+  udp: true
+- name: aws-jp
+  password: ee36d8b13e
+  server: aws.chakbass.top
+  type: trojan
+  port: 443
+  udp: true
 - name: los1
   password: n3Cs2DYEJl
   server: desi.chakbass.top
@@ -130,6 +142,8 @@ proxy-groups:
   interval: 300
   proxies:
   - buy
+  - azu-hk
+  - aws-jp
   - "\U0001F1F0\U0001F1F7"
   - 圣何塞
   - "\U0001F1E9\U0001F1EA"
@@ -142,6 +156,8 @@ proxy-groups:
   - buy
   - "\U0001F1E9\U0001F1EA"
   - 圣何塞
+  - azu-hk
+  - aws-jp
 - name: Netflix
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
@@ -149,6 +165,8 @@ proxy-groups:
   - "\U0001F1F8\U0001F1EC"
   - "\U0001F1F0\U0001F1F7"
   - 圣何塞
+  - azu-hk
+  - aws-jp
   - DIRECT
 - name: Disney
   type: select
