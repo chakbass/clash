@@ -42,93 +42,16 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: azu-hk
-  password: e105fd12f1
-  server: hk.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: aws-jp
-  password: ee36d8b13e
-  server: aws.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: los1
-  password: n3Cs2DYEJl
-  server: desi.chakbass.top
-  type: trojan
-  port: 47955
-  udp: true
-- name: kr-amd
-  type: vmess
-  server: or-amd.chakbass.top
-  port: 443
-  uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  network: ws
-  ws-opts:
-    path: /gddg54
-    headers:
-      Host: or-amd.chakbass.top
-- name: buy
-  type: vmess
-  server: buy.chakbass.top
-  port: 443
-  uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  network: ws
-  ws-opts:
-    path: /sdc23a
-    headers:
-      Host: buy.chakbass.top
-- name: ser
-  type: vmess
-  server: ser.chakbass.top
-  port: 443
-  uuid: e6fbf27b-5028-42a9-f072-e34e67c1a6e8
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  network: ws
-  ws-opts:
-    path: /dsd23
-    headers:
-      Host: ser.chakbass.top
-- name: "\U0001F1F8\U0001F1EC"
-  password: 5b61055dbb
-  server: green.chak.uk
-  type: trojan
-  port: 443
-  udp: true
-- name: "\U0001F1E9\U0001F1EA"
-  password: vGb2DdcI0A
-  server: netcup.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: 圣何塞
-  password: 1011c262-96d8-4bcc-b52a-971aedf2b36b
-  server: or-s.chakbass.top
-  type: trojan
-  port: 443
-  udp: true
-- name: "\U0001F1F0\U0001F1F7"
-  password: UpDmutLGq0
-  server: or-kr1.chakbass.top
-  type: trojan
-  port: 4353
-  udp: true
+  - {name: ser, server: ser.chakbass.top, port: 443, type: vmess, uuid: e6fbf27b-5028-42a9-f072-e34e67c1a6e8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /dsd23, headers: {Host: ser.chakbass.top}}, udp: true}
+  - {name: buy, server: buy.chakbass.top, port: 443, type: vmess, uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /sdc23a, headers: {Host: buy.chakbass.top}}, udp: true}
+  - {name: kr-amd, server: or-amd.chakbass.top, port: 443, type: vmess, uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /gddg54, headers: {Host: "%7B%22Host%22:%22or-amd.chakbass.top%22%7D"}}, udp: true}
+  - {name: aws-jp, server: aws.chakbass.top, port: 443, type: trojan, password: ee36d8b13e, sni: aws.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: azu-hk, server: hk.chakbass.top, port: 443, type: trojan, password: e105fd12f1, sni: hk.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1F0\U0001F1F7", server: or-kr1.chakbass.top, port: 4353, type: trojan, password: UpDmutLGq0, sni: or-kr1.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: los1, server: desi.chakbass.top, port: 47955, type: trojan, password: n3Cs2DYEJl, sni: desi.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1F8\U0001F1EC", server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, sni: green.chak.uk, skip-cert-verify: true, udp: true}
+  - {name: "\U0001F1E9\U0001F1EA", server: netcup.chakbass.top, port: 443, type: trojan, password: vGb2DdcI0A, sni: netcup.chakbass.top, skip-cert-verify: true, udp: true}
+  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 1011c262-96d8-4bcc-b52a-971aedf2b36b, sni: or-s.chakbass.top, skip-cert-verify: true, udp: true}
 proxy-groups:
 - name: 手动选择
   type: select
