@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇸🇬, server: green.chak.uk, port: 443, type: trojan, password: 5b61055dbb, skip-cert-verify: false}
+  - {name: 🇸🇬, server: green.chak.uk, port: 443, type: trojan, password: b06c26e9ed, skip-cert-verify: false}
   - {name: AMD, server: or-amd.chakbass.top, port: 443, type: vmess, uuid: 65f5ea3e-6513-435b-b61d-226e4228eb92, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /gddg54, headers: {Host: "%7B%22Host%22:%22or-amd.chakbass.top%22%7D"}}}
   - {name: 🇯🇵 aws-jp, server: aws.chakbass.top, port: 443, type: trojan, password: ee36d8b13e, skip-cert-verify: false}
   - {name: 🇭🇰 azure-hk, server: hk.chakbass.top, port: 443, type: trojan, password: e105fd12f1, skip-cert-verify: false}
