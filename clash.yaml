@@ -75,21 +75,6 @@ proxies:
     path: /gddg54
     headers:
       Host: or-amd.chakbass.top
-- name: buy
-  type: vmess
-  server: buy.chakbass.top
-  port: 443
-  uuid: 48a89f4b-6d9d-4d02-ef42-7b757eec91d0
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-  network: ws
-  ws-opts:
-    path: /sdc23a
-    headers:
-      Host: buy.chakbass.top
 - name: ser
   type: vmess
   server: ser.chakbass.top
@@ -106,7 +91,7 @@ proxies:
     headers:
       Host: ser.chakbass.top
 - name: "\U0001F1F8\U0001F1EC"
-  password: 5b61055dbb
+  password: b06c26e9ed
   server: green.chak.uk
   type: trojan
   port: 443
@@ -141,7 +126,6 @@ proxy-groups:
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   proxies:
-  - buy
   - azu-hk
   - aws-jp
   - "\U0001F1F0\U0001F1F7"
@@ -153,7 +137,6 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
   proxies:
-  - buy
   - "\U0001F1E9\U0001F1EA"
   - 圣何塞
   - azu-hk
@@ -185,13 +168,11 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
   proxies:
-  - buy
   - DIRECT
 - name: Microsoft
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
   proxies:
-  - buy
   - DIRECT
 - name: BiliBili
   type: select
@@ -217,7 +198,6 @@ proxy-groups:
 - name: HBO
   type: load-balance
   proxies:
-  - buy
   - 圣何塞
   - los1
   url: http://cp.cloudflare.com/generate_204
@@ -226,7 +206,6 @@ proxy-groups:
 - name: Apple News
   type: url-test
   proxies:
-  - buy
   - 圣何塞
   url: http://cp.cloudflare.com/generate_204
   interval: 300
