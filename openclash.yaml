@@ -216,8 +216,6 @@ rule-providers:
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml"
     interval: 86400
 rules: 
- - DOMAIN,185.232.68.83:32400,DIRECT
- - DOMAIN-SUFFIX,plex.com,DIRECT
  - RULE-SET,YouTube,YouTube
  - RULE-SET,Disney,Disney
  - RULE-SET,Apple News,Apple News
