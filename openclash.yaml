@@ -15,8 +15,8 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
+  - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202001, skip-cert-verify: false}
   - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
-  - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
   - {name: amd, server: or-amd.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
   - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: xceMRugnEk, skip-cert-verify: false}
   - {name: hk, server: hk.chakbass.top, port: 443, type: trojan, password: b574dfb3-74b3-4c65-a1a9-04538e4554ea, skip-cert-verify: false}
@@ -42,7 +42,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - us
+      - 美国
       - sg
       - amd
       - hk
@@ -55,7 +55,7 @@ proxy-groups:
   - name: YouTube
     type: select
     proxies:
-      - us
+      - 美国
       - sg
       - amd
   - name: Disney
@@ -79,24 +79,24 @@ proxy-groups:
   - name: HBO-Max
     type: select
     proxies:
-      - us
+      - 美国
       - 圣何塞
   - name: Hulu
     type: select
     proxies:
-      - us
+      - 美国
       - 圣何塞
   - name: Apple News
     type: url-test
     url: http://cp.cloudflare.com/generate_204
     interval: 1800
     proxies:
-      - us
+      - 美国
   - name: Scholar
     type: select
     proxies:
       - DIRECT
-      - us
+      - 美国
       - 圣何塞
   - name: Others
     type: select
@@ -161,7 +161,7 @@ proxy-groups:
   - name: PayPal
     type: select
     proxies:
-      - us
+      - 美国
       - DIRECT
   - name: Microsoft
     type: select
@@ -173,7 +173,7 @@ proxy-groups:
     proxies:
       - DIRECT
       - Proxies
-  - name: us
+  - name: 美国
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 200
