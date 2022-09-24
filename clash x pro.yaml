@@ -1,0 +1,263 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202001, skip-cert-verify: false}
+  - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
+  - {name: amd, server: or-amd.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
+  - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: xceMRugnEk, skip-cert-verify: false}
+  - {name: hk, server: hk.chakbass.top, port: 443, type: trojan, password: b574dfb3-74b3-4c65-a1a9-04538e4554ea, skip-cert-verify: false}
+  - {name: rak, server: rak.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
+  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 7d46090b-6c79-420b-9fe0-8dd3727c054e, skip-cert-verify: false}
+  - {name: rac, server: rac.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
+proxy-groups:
+  - name: 手动选择
+    type: select
+    proxies:
+      - Auto
+  - name: Auto
+    type: fallback
+    interval: 200
+    url: "http://www.gstatic.com/generate_204"
+    proxies:
+      - us
+      - rac
+      - hk
+  - name: YouTube
+    type: select
+    interval: 100
+    proxies:
+      - rac
+      - us
+      - amd
+  - name: Netflix
+    type: select
+    proxies:
+      - sg
+      - amd
+      - rac
+      - 圣何塞
+  - name: Disney
+    type: select
+    proxies:
+      - sg
+      - amd
+      - rac
+      - 圣何塞
+  - name: AD-block
+    type: select
+    proxies:
+      - REJECT
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - us
+  - name: Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - us
+  - name: BiliBili
+    type: select
+    proxies:
+      - DIRECT
+      - hk
+  - name: China-direct
+    type: select
+    proxies:
+      - DIRECT
+  - name: Telegram
+    type: select
+    proxies:
+      - sg
+      - Auto
+  - name: iCloud
+    type: select
+    proxies:
+      - DIRECT
+  - name: Spotify
+    type: select
+    proxies:
+      - DIRECT
+      - Auto
+  - name: HBO
+    type: load-balance
+    url: http://cp.cloudflare.com/generate_204
+    interval: 200
+    proxies:
+      - 圣何塞
+      - us
+  - name: Apple News
+    type: select
+    url: http://cp.cloudflare.com/generate_204 
+    interval: 300
+    proxies:
+      - us
+  - name: Paypal
+    type: select
+    proxies:
+      - us
+      - DIRECT
+  - name: Speedtest
+    type: select
+    proxies:
+      - DIRECT
+      - hk
+      - cl
+      - rak
+      - sg
+      - jp
+      - amd
+      - 圣何塞
+      - rac
+  - name: us
+    type: fallback
+    interval: 200
+    url: http://cp.cloudflare.com/generate_204
+    proxies:
+      - cl
+      - rac
+      - 圣何塞
+rule-providers:
+  AD-block:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/reject.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+  Apple:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/apple.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+  Apple News:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/AppleNews.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml"
+  Auto:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/proxy.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+  BiliBili:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/BiliBili.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili.yaml"
+  China-direct:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/direct.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+  Disney:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/DisneyPlus.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml"
+  HBO:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/HBO.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml"
+  Microsoft:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Microsoft.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+  Netflix:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Netflix.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+  Paypal:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/PayPal.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"
+  Speedtest:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Speedtest.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml"
+  Spotify:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Spotify.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+  Telegram:
+    behavior: ipcidr
+    interval: 86400
+    path: ./ruleset/telegramcidr.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+  YouTube:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/YouTube.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+  iCloud:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/icloud.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+rules:
+ - DST-PORT,32400,DIRECT
+ - DOMAIN-KEYWORD,plex,DIRECT
+ - RULE-SET,Speedtest,Speedtest
+ - RULE-SET,Paypal,Paypal
+ - RULE-SET,Apple News,Apple News
+ - RULE-SET,China-direct,China-direct
+ - RULE-SET,AD-block,AD-block
+ - RULE-SET,Telegram,Telegram
+ - RULE-SET,iCloud,iCloud
+ - RULE-SET,Apple,Apple
+ - RULE-SET,Auto,Auto
+ - RULE-SET,China-direct,China-direct
+ - RULE-SET,YouTube,YouTube
+ - RULE-SET,Netflix,Netflix
+ - RULE-SET,Disney,Disney
+ - RULE-SET,HBO,HBO
+ - RULE-SET,Microsoft,Microsoft
+ - RULE-SET,BiliBili,BiliBili
+ - RULE-SET,Spotify,Spotify
+ - IP-CIDR,192.168.0.0/16,DIRECT
+ - IP-CIDR,10.0.0.0/8,DIRECT
+ - IP-CIDR,172.16.0.0/12,DIRECT
+ - IP-CIDR,127.0.0.0/8,DIRECT
+ - IP-CIDR,100.64.0.0/10,DIRECT
+ - IP-CIDR,224.0.0.0/4,DIRECT
+ - IP-CIDR,fe80::/10,DIRECT
+ - IP-CIDR,119.28.28.28/32,DIRECT
+ - IP-CIDR,182.254.116.0/24,DIRECT
+ - GEOIP,CN,DIRECT
+ - GEOIP,US,us
+ - MATCH,Auto
