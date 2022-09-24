@@ -6,6 +6,7 @@ log-level: info
 external-controller: :9090
 proxies:
   - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
+  - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
   - {name: amd, server: or-amd.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
   - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: xceMRugnEk, skip-cert-verify: false}
   - {name: hk, server: hk.chakbass.top, port: 443, type: trojan, password: b574dfb3-74b3-4c65-a1a9-04538e4554ea, skip-cert-verify: false}
@@ -20,6 +21,7 @@ proxy-groups:
       - DIRECT
       - sg
       - amd
+      - cl
       - jp
       - hk
       - rak
@@ -166,9 +168,10 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 200
     proxies:
-      - rak
+      - cl
       - rac
       - 🇺🇸 圣何塞
+      - rak
 rule-providers:
   YouTube:
     type: http
