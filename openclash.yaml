@@ -29,14 +29,14 @@ proxy-groups:
     proxies:
       - Auto
       - DIRECT
+      - cl
       - sg
       - amd
-      - cl
       - jp
       - hk
       - rak
-      - rac
       - 圣何塞
+      - rac
   - name: Auto
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -45,8 +45,11 @@ proxy-groups:
       - 美国
       - sg
       - amd
+      - jp
       - hk
+      - rak
       - 圣何塞
+      - rac
   - name: Domestic
     type: select
     proxies:
@@ -64,7 +67,7 @@ proxy-groups:
       - sg
       - amd
       - jp
-      - rac
+      - hk
       - rak
       - 圣何塞
   - name: Netflix
@@ -73,7 +76,7 @@ proxy-groups:
       - sg
       - amd
       - jp
-      - rac
+      - hk
       - rak
       - 圣何塞
   - name: HBO-Max
@@ -87,9 +90,7 @@ proxy-groups:
       - 美国
       - 圣何塞
   - name: Apple News
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 1800
+    type: select
     proxies:
       - 美国
   - name: Scholar
@@ -125,7 +126,7 @@ proxy-groups:
       - sg
       - amd
       - jp
-      - rac
+      - hk
       - rak
       - 圣何塞
   - name: Spotify
@@ -135,7 +136,7 @@ proxy-groups:
       - sg
       - amd
       - jp
-      - rac
+      - hk
       - rak
       - 圣何塞
   - name: Telegram
@@ -151,13 +152,14 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - cl
       - sg
       - amd
       - jp
       - hk
       - rak
-      - rac
       - 圣何塞
+      - rac
   - name: PayPal
     type: select
     proxies:
