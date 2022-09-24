@@ -35,7 +35,7 @@ proxy-groups:
   - name: 🇺🇲 美国节点
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 200
+    interval: 300
     proxies:
       - cl
       - rac
