@@ -4,6 +4,16 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 proxies:
   - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
   - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
@@ -11,7 +21,7 @@ proxies:
   - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: xceMRugnEk, skip-cert-verify: false}
   - {name: hk, server: hk.chakbass.top, port: 443, type: trojan, password: b574dfb3-74b3-4c65-a1a9-04538e4554ea, skip-cert-verify: false}
   - {name: rak, server: rak.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
-  - {name: 🇺🇸 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 7d46090b-6c79-420b-9fe0-8dd3727c054e, skip-cert-verify: false}
+  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 7d46090b-6c79-420b-9fe0-8dd3727c054e, skip-cert-verify: false}
   - {name: rac, server: rac.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
 proxy-groups:
   - name: Proxies
@@ -26,7 +36,7 @@ proxy-groups:
       - hk
       - rak
       - rac
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Auto
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -36,7 +46,7 @@ proxy-groups:
       - sg
       - amd
       - hk
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Domestic
     type: select
     proxies:
@@ -56,7 +66,7 @@ proxy-groups:
       - jp
       - rac
       - rak
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Netflix
     type: select
     proxies:
@@ -65,17 +75,17 @@ proxy-groups:
       - jp
       - rac
       - rak
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: HBO-Max
     type: select
     proxies:
       - us
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Hulu
     type: select
     proxies:
       - us
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Apple News
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -87,7 +97,7 @@ proxy-groups:
     proxies:
       - DIRECT
       - us
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Others
     type: select
     proxies:
@@ -117,7 +127,7 @@ proxy-groups:
       - jp
       - rac
       - rak
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Spotify
     type: select
     proxies:
@@ -127,7 +137,7 @@ proxy-groups:
       - jp
       - rac
       - rak
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: Telegram
     type: select
     proxies:
@@ -147,7 +157,7 @@ proxy-groups:
       - hk
       - rak
       - rac
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: PayPal
     type: select
     proxies:
@@ -170,7 +180,7 @@ proxy-groups:
     proxies:
       - cl
       - rac
-      - 🇺🇸 圣何塞
+      - 圣何塞
       - rak
 rule-providers:
   YouTube:
