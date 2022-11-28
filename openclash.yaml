@@ -15,19 +15,12 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - {name: cl, server: cl.chakbass.top, port: 443, type: trojan, password: r202001, skip-cert-verify: false}
-  - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
-  - {name: amd, server: or-amd.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
-  - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: xceMRugnEk, skip-cert-verify: false}
-  - {name: hk, server: hk.chakbass.top, port: 443, type: trojan, password: b574dfb3-74b3-4c65-a1a9-04538e4554ea, skip-cert-verify: false}
-  - {name: rak, server: rak.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
-  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: 7d46090b-6c79-420b-9fe0-8dd3727c054e, skip-cert-verify: false}
-  - {name: rac, server: rac.chakbass.top, port: 443, type: trojan, password: r202201, skip-cert-verify: false}
+  - {name: sg, server: gc.chakbass.top, port: 443, type: trojan, password: Rr536824%$4T, skip-cert-verify: false}
+  - {name: amd, server: kr1.chakbass.top, port: 443, type: trojan, password: Rr536824%$4T, skip-cert-verify: false}
+  - {name: jp, server: jp-arm.chakbass.top, port: 443, type: trojan, password: sysadmin&r536824, skip-cert-verify: false}
+  - {name: 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: Rr536824%$4T, skip-cert-verify: false}
+  - {name: buy, server: buy.chakbass.top, port: 443, type: trojan, password: Rr536824%$4T, skip-cert-verify: false}
 proxy-groups:
-  - name: 🇭🇰 香港节点
-    type: select
-    proxies:
-      - hk
   - name: 🇯🇵 日本节点
     type: select
     proxies:
@@ -37,10 +30,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - cl
-      - rac
+      - buy
       - 圣何塞
-      - rak
   - name: 🇸🇬 狮城节点
     type: select
     proxies:
@@ -66,7 +57,6 @@ proxy-groups:
   - name: 📲 聊天软件
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -132,7 +122,6 @@ proxy-groups:
     type: select
     proxies:
       - 🇯🇵 日本节点
-      - 🇭🇰 香港节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
       - 🇰🇷 韩国节点
@@ -142,7 +131,6 @@ proxy-groups:
   - name: 🎬 国外媒体
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -153,7 +141,6 @@ proxy-groups:
   - name: 🎬 港台媒体
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -164,7 +151,6 @@ proxy-groups:
   - name: 🌏 国外网站
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -176,7 +162,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -186,7 +171,6 @@ proxy-groups:
   - name: 🎵 Spotify
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -197,7 +181,6 @@ proxy-groups:
   - name: 🎵 TikTok
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -209,7 +192,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -220,7 +202,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -231,7 +212,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -242,7 +222,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -253,7 +232,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -264,7 +242,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
@@ -281,7 +258,6 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
       - 🇰🇷 韩国节点
-      - 🇭🇰 香港节点
       - 🇯🇵 日本节点
       - 🌍 其他地区
       - ♻️ 手动切换
