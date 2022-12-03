@@ -83,7 +83,7 @@ proxy-groups:
       - buy
       - gc
       - 圣何塞
-      - kr
+      - kr1
       - jp-arm
   - name: 🔮 负载均衡
     type: load-balance
