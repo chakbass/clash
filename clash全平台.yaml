@@ -1,0 +1,321 @@
+allow-lan: true
+dns:
+  default-nameserver:
+  - 223.5.5.5
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '+.lan'
+  - '+.cn'
+  - '+.10010.com'
+  - '+.chinaunicom.com'
+  - '+.baidu.com'
+  - '*.alipay.com'
+  - '*.alipayobjects.com'
+  - '*.jijifun.com'
+  - 'connect.rom.miui.com'
+  - 'localhost.ptlogin2.qq.com'
+  - '+.msftnsci.com'
+  - '+.msftconnecttest.com'
+  - 'dl.google.com'
+  fake-ip-range: 198.18.0.1/16
+  fallback:
+  - https://doh.opendns.com/dns-query
+  - https://dns.adguard.com/dns-query
+  - https://doh.dns.sb/dns-query
+  - https://dns64.cloudflare-dns.com/dns-query
+  - https://dns64.dns.google/dns-query
+  - https://dns.google/dns-query
+  - https://cloudflare-dns.com/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+  ipv6: true
+  listen: 0.0.0.0:1053
+  nameserver:
+  - 223.5.5.5
+  - https://doh.pub/dns-query
+external-controller: :9090
+log-level: info
+mixed-port: 7890
+mode: rule
+proxies:
+- name: kr1
+  password: Rr536824%$4T
+  port: 443
+  server: kr1.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: gc
+  password: Rr536824%$4T
+  port: 443
+  server: gc.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: 圣何塞
+  password: Rr536824%$4T
+  port: 443
+  server: or-s.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: buy
+  password: Rr536824%$4T
+  port: 443
+  server: buy.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+  udp: false
+- name: jp-arm
+  password: sysadmin&r536824
+  port: 443
+  server: jp-arm.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+  udp: false
+proxy-groups:
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+  name: 手动选择
+  proxies:
+  - Auto
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+  interval: 60
+  name: Auto
+  proxies:
+  - US
+  - KR
+  - JP
+  - SG
+  type: fallback
+  url: "http://www.gstatic.com/generate_204"
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+  interval: 100
+  name: YouTube
+  proxies:
+  - US
+  - KR
+  - JP
+  - SG
+  type: fallback
+  url: http://cp.cloudflare.com/generate_204
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+  interval: 300
+  name: Netflix
+  proxies:
+  - SG
+  - US
+  type: select
+  url: http://cp.cloudflare.com/generate_204
+- icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/DisneyPlus.png
+  name: Disney
+  proxies:
+  - SG
+  - JP
+  - KR
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+  name: Apple
+  proxies:
+  - DIRECT
+  - US
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  name: Microsoft
+  proxies:
+  - DIRECT
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
+  name: BiliBili
+  proxies:
+  - DIRECT
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+  name: Telegram
+  proxies:
+  - Auto
+  type: select
+- icon: ☁️
+  name: iCloud
+  proxies:
+  - DIRECT
+  - US
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+  name: Spotify
+  proxies:
+  - DIRECT
+  - Auto
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HBO.png
+  interval: 200
+  name: HBO
+  proxies:
+  - buy
+  - 圣何塞
+  type: load-balance
+  url: http://cp.cloudflare.com/generate_204
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_News.png
+  interval: 300
+  name: Apple News
+  proxies:
+  - US
+  type: select
+  url: http://cp.cloudflare.com/generate_204
+- icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/paypal.png
+  name: Paypal
+  proxies:
+  - US
+  - DIRECT
+  type: select
+- icon: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/speedtest.png
+  name: Speedtest
+  proxies:
+  - DIRECT
+  - jp-arm
+  - 圣何塞
+  - gc
+  - kr1
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  interval: 60
+  name: US
+  proxies:
+  - buy
+  - 圣何塞
+  type: fallback
+  url: http://cp.cloudflare.com/generate_204
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+  name: KR
+  proxies:
+  - kr1
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+  name: SG
+  proxies:
+  - gc
+  type: select
+- icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+  interval: 100
+  name: JP
+  proxies:
+  - jp-arm
+  type: select
+  url: http://cp.cloudflare.com/generate_204
+rule-providers:
+  Apple:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/apple.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+  Apple News:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/AppleNews.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml"
+  Auto:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/proxy.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+  BiliBili:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/BiliBili.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili.yaml"
+  Disney:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/DisneyPlus.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml"
+  HBO:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/HBO.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml"
+  Microsoft:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Microsoft.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+  Netflix:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Netflix.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml"
+  Paypal:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/PayPal.yaml
+    type: http
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml
+  Speedtest:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Speedtest.yaml
+    type: http
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
+  Spotify:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/Spotify.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+  Telegram:
+    behavior: ipcidr
+    interval: 86400
+    path: ./ruleset/telegramcidr.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+  YouTube:
+    behavior: classical
+    interval: 86400
+    path: ./ruleset/YouTube.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+  iCloud:
+    behavior: domain
+    interval: 86400
+    path: ./ruleset/icloud.yaml
+    type: http
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+rules:
+- DOMAIN-KEYWORD,plex,DIRECT
+- DST-PORT,32400,DIRECT
+- RULE-SET,Speedtest,Speedtest
+- RULE-SET,Paypal,Paypal
+- RULE-SET,Apple News,Apple News
+- RULE-SET,Telegram,Telegram
+- RULE-SET,iCloud,iCloud
+- RULE-SET,Apple,Apple
+- RULE-SET,Auto,Auto
+- RULE-SET,YouTube,YouTube
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Disney,Disney
+- RULE-SET,HBO,HBO
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,BiliBili,BiliBili
+- RULE-SET,Spotify,Spotify
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR,fe80::/10,DIRECT
+- IP-CIDR,119.28.28.28/32,DIRECT
+- IP-CIDR,182.254.116.0/24,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Auto
