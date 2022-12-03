@@ -5,11 +5,43 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: buy, server: buy.chakbass.top, port: 443, type: trojan, password: Rr536824%25$4T}
-  - {name: gc, server: gc.chakbass.top, port: 443, type: trojan, password: Rr536824%25$4T}
-  - {name: 🇺🇸 圣何塞, server: or-s.chakbass.top, port: 443, type: trojan, password: Rr536824%25$4T}
-  - {name: 🇰🇷 kr, server: kr1.chakbass.top, port: 443, type: trojan, password: Rr536824%25$4T}
-  - {name: 🇯🇵 jp-arm, server: jp-arm.chakbass.top, port: 443, type: trojan, password: Rr536824%25$4T}
+- name: kr1
+  password: Rr536824%$4T
+  port: 443
+  server: kr1.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: gc
+  password: Rr536824%$4T
+  port: 443
+  server: gc.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: 圣何塞
+  password: Rr536824%$4T
+  port: 443
+  server: or-s.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+- name: buy
+  password: Rr536824%$4T
+  port: 443
+  server: buy.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+  udp: false
+- name: jp-arm
+  password: sysadmin&r536824
+  port: 443
+  server: jp-arm.chakbass.top
+  skip-cert-verify: false
+  tls: true
+  type: trojan
+  udp: false
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -28,9 +60,9 @@ proxy-groups:
     proxies:
       - buy
       - gc
-      - 🇺🇸 圣何塞
-      - 🇰🇷 kr
-      - 🇯🇵 jp-arm
+      - 圣何塞
+      - kr1
+      - jp-arm
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -39,9 +71,9 @@ proxy-groups:
     proxies:
       - buy
       - gc
-      - 🇺🇸 圣何塞
-      - 🇰🇷 kr
-      - 🇯🇵 jp-arm
+      - 圣何塞
+      - kr1
+      - jp-arm
   - name: 🔯 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -50,9 +82,9 @@ proxy-groups:
     proxies:
       - buy
       - gc
-      - 🇺🇸 圣何塞
-      - 🇰🇷 kr
-      - 🇯🇵 jp-arm
+      - 圣何塞
+      - kr
+      - jp-arm
   - name: 🔮 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -62,9 +94,9 @@ proxy-groups:
     proxies:
       - buy
       - gc
-      - 🇺🇸 圣何塞
-      - 🇰🇷 kr
-      - 🇯🇵 jp-arm
+      - 圣何塞
+      - kr1
+      - jp-arm
   - name: 📲 电报消息
     type: select
     proxies:
@@ -211,12 +243,9 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
   - name: 🇯🇵 日本节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     proxies:
-      - 🇯🇵 jp-arm
+      - jp-arm
   - name: 🇺🇲 美国节点
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -224,26 +253,20 @@ proxy-groups:
     tolerance: 150
     proxies:
       - buy
-      - 🇺🇸 圣何塞
+      - 圣何塞
   - name: 🇸🇬 狮城节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     proxies:
       - gc
   - name: 🇰🇷 韩国节点
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: select
     proxies:
-      - 🇰🇷 kr
+      - kr1
   - name: 🎥 奈飞节点
     type: select
     proxies:
       - gc
-      - 🇺🇸 圣何塞
+      - 圣何塞
 rules:
  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
